@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    volumes:
+      - .:/workspace
+    tty: true
+    ports:
+      - 8000:8000
