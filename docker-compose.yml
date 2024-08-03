@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    volumes:
+      - .:/workspace
+    tty: true
+    ports:
+      - 8000:8000
+    command: bash -c "python manage.py runserver 0.0.0.0:8000"
