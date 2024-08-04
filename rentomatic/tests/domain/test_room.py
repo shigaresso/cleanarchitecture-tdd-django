@@ -18,3 +18,24 @@ def test_rom_model_init():
     assert room.price == 10
     assert room.longitude == -0.09998975
     assert room.latitude == 51.75436293
+
+
+def test_room_model_from_dict():
+    code = uuid.uuid4()
+    init_dict = {
+        "code": code,
+        "size": 200,
+        "price": 10,
+        "longitude": -0.09998975,
+        "latitude": 51.75436293,
+    }
+    expect = Room(
+        code,
+        size=200,
+        price=10,
+        longitude=-0.09998975,
+        latitude=51.75436293,
+    )
+
+    actual = Room(**init_dict)
+    assert actual == expect
