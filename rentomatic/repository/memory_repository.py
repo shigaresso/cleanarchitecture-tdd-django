@@ -1,4 +1,4 @@
-from rentomatic.domain.room import Room
+from ..domain.room import Room
 
 
 class MemoryRepository:
