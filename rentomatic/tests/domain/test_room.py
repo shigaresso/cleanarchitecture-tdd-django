@@ -37,5 +37,5 @@ def test_room_model_from_dict():
         latitude=51.75436293,
     )
 
-    actual = Room(**init_dict)
+    actual = Room.from_dict(init_dict)
     assert actual == expect
