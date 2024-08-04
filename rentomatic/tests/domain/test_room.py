@@ -1,6 +1,6 @@
 import uuid
 
-from ...domain.room import Room
+from rentomatic.domain.room import Room
 
 
 def test_rom_model_init():
