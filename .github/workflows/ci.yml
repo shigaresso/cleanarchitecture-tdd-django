@@ -22,4 +22,4 @@ jobs:
           ruff check --output-format=github .
           ruff format . --check --diff
       - name: Run pytest
-        run: pytest test .
+        run: pytest .
