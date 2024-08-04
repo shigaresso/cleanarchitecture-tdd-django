@@ -3,8 +3,8 @@ from unittest import mock
 
 import pytest
 
-from ...domain.room import Room
-from ...use_cases.room_list import room_list_use_case
+from rentomatic.domain.room import Room
+from rentomatic.use_cases.room_list import room_list_use_case
 
 
 @pytest.fixture

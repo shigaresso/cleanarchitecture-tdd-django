@@ -1,7 +1,7 @@
 import pytest
 
-from ...domain.room import Room
-from ...repository.memory_repository import MemoryRepository
+from rentomatic.domain.room import Room
+from rentomatic.repository.memory_repository import MemoryRepository
 
 
 @pytest.fixture
