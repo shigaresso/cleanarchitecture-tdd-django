@@ -1,0 +1,26 @@
+name: CI
+
+on: push
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - name: Install dependencies
+        run: |
+          poetry export --with dev -f requirements.txt -o requirements.txt
+          pip install -r requirements.txt
+      - name: Run ruff for lint and format
+        run: |
+          ruff check --output-format=github .
+          ruff format . --check --diff
+      - name: Run pytest
+        run: pytest
